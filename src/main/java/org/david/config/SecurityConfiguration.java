@@ -20,8 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http
-		.authorizeRequests().antMatchers("/static/assets/**", "/resources/**", "/static/**","/src/main/resources/**","/src/main/resources/static/**","/resources/static/**" ).permitAll()
-		.and()
+		.authorizeRequests().antMatchers("/assets/**").permitAll().and()
 		.formLogin().loginPage("/login").permitAll()
 		.usernameParameter("username").passwordParameter("password")
 		.defaultSuccessUrl("/loginsuccess").permitAll().and()
